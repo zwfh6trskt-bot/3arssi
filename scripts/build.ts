@@ -20,6 +20,8 @@ const result = await Bun.build({
     "process.env.PUBLIC_SUPABASE_URL": JSON.stringify(process.env.PUBLIC_SUPABASE_URL ?? ""),
     "process.env.PUBLIC_SUPABASE_ANON_KEY": JSON.stringify(process.env.PUBLIC_SUPABASE_ANON_KEY ?? ""),
     "process.env.PUBLIC_BASE_PATH": JSON.stringify(base),
+    "process.env.PUBLIC_NEON_AUTH_URL": JSON.stringify(process.env.PUBLIC_NEON_AUTH_URL ?? ""),
+    "process.env.PUBLIC_NEON_DATA_API_URL": JSON.stringify(process.env.PUBLIC_NEON_DATA_API_URL ?? ""),
   },
 });
 if (!result.success) {
@@ -32,5 +34,5 @@ await writeFile("dist/_redirects", "/*  /index.html  200\n");
 // SPA fallback for GitHub Pages: unknown paths serve 404.html = the app
 await copyFile("dist/index.html", "dist/404.html");
 await writeFile("dist/.nojekyll", "");
-const mode = process.env.PUBLIC_SUPABASE_URL ? "Supabase (hosted database)" : "device-only demo mode";
+const mode = process.env.PUBLIC_NEON_DATA_API_URL ? "Neon (hosted database)" : process.env.PUBLIC_SUPABASE_URL ? "Supabase (hosted database)" : "device-only demo mode";
 console.log(`Built ${result.outputs.length} files → dist/  ·  data mode: ${mode}`);

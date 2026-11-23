@@ -118,6 +118,7 @@ function filterQuery(filter?: Filter): string[] {
 
 export class SupabaseDb implements Db {
   readonly mode = "supabase" as const;
+  readonly canUpload = true;
   constructor(private url: string, private key: string, private auth: SupabaseAuth) {}
 
   private async headers(extra: Record<string, string> = {}) {

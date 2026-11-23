@@ -9,8 +9,12 @@ export interface SelectOptions {
   order?: string;          // e.g. "sort_order" or "created_at.desc"
 }
 
+export type BackendMode = "neon" | "supabase" | "local";
+
 export interface Db {
-  readonly mode: "supabase" | "local";
+  readonly mode: BackendMode;
+  /** False when the backend has no browser upload support (paste a URL instead). */
+  readonly canUpload: boolean;
   select<T>(table: string, filter?: Filter, opts?: SelectOptions): Promise<T[]>;
   insert<T>(table: string, rows: object | object[]): Promise<T[]>;
   update<T>(table: string, filter: Filter, patch: object): Promise<T[]>;
@@ -25,12 +29,14 @@ export interface Db {
 export interface AuthUser { id: string; email: string }
 
 export interface Auth {
-  readonly mode: "supabase" | "local";
+  readonly mode: BackendMode;
   currentUser(): AuthUser | null;
   signUp(email: string, password: string, displayName: string): Promise<{ needsConfirmation: boolean }>;
   signIn(email: string, password: string): Promise<void>;
   signOut(): Promise<void>;
   resetPassword(email: string): Promise<void>;
+  /** Sets a new password from the token in the reset email link (when supported). */
+  completePasswordReset?(token: string, newPassword: string): Promise<void>;
   onChange(cb: (u: AuthUser | null) => void): () => void;
   accessToken(): Promise<string | null>;
 }

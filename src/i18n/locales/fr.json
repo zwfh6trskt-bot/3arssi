@@ -2,7 +2,6 @@
   "lang.choose": "Choisissez votre langue",
   "currency.da": "DA",
   "brand.home": "Accueil 3ARSSI",
-
   "landing.welcome": "Tout votre mariage, organisé en un seul endroit, en toute sérénité.",
   "landing.choose": "Quel côté préparez-vous ?",
   "side.bride": "El 3rossa",
@@ -12,21 +11,18 @@
   "sideScope.bride": "El 3rossa",
   "sideScope.groom": "El 3ris",
   "sideScope.both": "Les deux côtés",
-
   "nav.main": "Navigation principale",
   "nav.events": "Événements",
   "nav.providers": "Prestataires",
   "nav.budgets": "Budgets",
   "nav.saved": "Favoris",
   "nav.profile": "Profil",
-
   "space.eyebrow.bride": "L'espace d'El 3rossa",
   "space.eyebrow.groom": "L'espace d'El 3ris",
   "space.title": "Vos préparatifs",
   "space.intro": "Choisissez un événement pour voir quoi préparer, planifier son budget et trouver des prestataires.",
   "space.visitorHint": "Vous pouvez explorer librement. Créez un compte pour enregistrer listes, budgets et prestataires.",
   "space.switchTo": "Passer à {side}",
-
   "events.title": "Événements",
   "events.event": "Événement",
   "events.personalise": "Personnaliser",
@@ -47,7 +43,6 @@
   "events.removeTitle": "Retirer « {name} » ?",
   "events.removeSuggested": "Il disparaîtra de votre espace. Vous pourrez le restaurer plus tard.",
   "events.removeCustom": "Cet événement, son budget, sa liste et ses dépenses seront supprimés.",
-
   "categories.title": "À préparer",
   "categories.customise": "Personnaliser",
   "categories.customiseIntro": "Masquez, renommez ou réordonnez les catégories, ou ajoutez les vôtres.",
@@ -57,12 +52,10 @@
   "categories.newPlaceholder": "Nom de la nouvelle catégorie",
   "categories.yours": "Votre catégorie",
   "categories.subcategories": "Sous-catégories",
-
   "checklist.title": "Liste de préparation",
   "checklist.progress": "{done} sur {total} fait(s)",
   "checklist.add": "Ajouter une tâche",
   "checklist.addPlaceholder": "Ajouter votre propre tâche",
-
   "guide.title": "Conseils",
   "kind.checklist": "Élément de liste",
   "kind.suggestion": "Suggestion",
@@ -74,10 +67,8 @@
   "importance.optional": "Facultatif",
   "importance.regional": "Selon la région",
   "importance.regionalIn": "Régional · {place}",
-
   "notes.title": "Notes",
   "notes.placeholder": "Quelque chose à retenir…",
-
   "budget.pageTitle": "Budgets par événement",
   "budget.independentNote": "Chaque événement a son propre budget, indépendant. Ils ne sont jamais additionnés.",
   "budget.independentShort": "Ce budget concerne uniquement cet événement.",
@@ -112,7 +103,6 @@
   "budget.overspentBadge": "Allocation dépassée",
   "budget.signInTitle": "Planifiez vos budgets",
   "budget.signInText": "Connectez-vous pour définir un budget par événement et suivre vos dépenses.",
-
   "expense.title": "Dépenses",
   "expense.add": "Ajouter une dépense",
   "expense.edit": "Modifier la dépense",
@@ -130,7 +120,6 @@
   "expense.date": "Date",
   "expense.note": "Note",
   "expense.deleteTitle": "Supprimer cette dépense ?",
-
   "estimate.title": "Estimation de prix",
   "estimate.add": "Estimer",
   "estimate.intro": "Estimez un coût à partir des fourchettes de prix communiquées par les prestataires.",
@@ -150,13 +139,11 @@
   "estimate.save": "Enregistrer l'estimation",
   "estimate.setBudgetHint": "Allouez un budget à cette catégorie pour voir le statut.",
   "estimate.disclaimer": "Les estimations sont indicatives, non garanties. Le devis final du prestataire peut différer (livraison, installation, déplacement…).",
-
   "status.within": "Dans le budget",
   "status.may_exceed": "Peut dépasser le budget",
   "status.over": "Hors budget",
   "status.unavailable": "Prix indisponible",
   "status.no_budget": "Aucun budget défini",
-
   "unit.piece": "pièce",
   "unit.kg": "kg",
   "unit.person": "personne",
@@ -175,7 +162,6 @@
   "unitPlural.quote": "devis",
   "priceStatus.indicative": "Prix indicatif",
   "priceStatus.confirmed": "Confirmé par le prestataire",
-
   "providers.title": "Prestataires",
   "providers.search": "Rechercher un prestataire",
   "providers.serviceType": "Type de service",
@@ -205,13 +191,11 @@
   "providers.availabilityManual": "Les disponibilités sont saisies manuellement et peuvent ne pas être à jour.",
   "providers.lastUpdated": "Informations mises à jour le {date}",
   "providers.whatsappGreeting": "Bonjour {name}, je vous ai trouvé sur 3ARSSI.",
-
   "contact.title": "Contact",
   "contact.whatsapp": "WhatsApp",
   "contact.call": "Appeler",
   "contact.instagram": "Instagram",
   "contact.website": "Site web",
-
   "saved.title": "Prestataires enregistrés",
   "saved.intro": "Les prestataires que vous voulez garder en tête.",
   "saved.add": "Enregistrer le prestataire",
@@ -222,11 +206,9 @@
   "saved.emptyText": "Touchez le marque-page d'un prestataire pour le retrouver ici.",
   "saved.signInTitle": "Gardez vos favoris",
   "saved.signInText": "Connectez-vous pour enregistrer des prestataires et les retrouver sur tous vos appareils.",
-
   "profile.guest": "Invité",
   "profile.guestText": "Vous explorez sans compte.",
   "profile.changeSpace": "Retour au début",
-
   "settings.title": "Paramètres",
   "settings.sub": "Langue, compte",
   "settings.language": "Langue",
@@ -235,7 +217,6 @@
   "settings.data": "Vos données",
   "settings.dataDemo": "Mode démo : tout est enregistré uniquement dans ce navigateur. Rien n'apparaîtra sur vos autres appareils.",
   "settings.dataCloud": "Votre planning est enregistré en sécurité dans votre compte et disponible sur tous vos appareils.",
-
   "auth.signIn": "Se connecter",
   "auth.signOut": "Se déconnecter",
   "auth.createAccount": "Créer un compte",
@@ -257,7 +238,6 @@
   "auth.errorConfirm": "Veuillez d'abord confirmer votre e-mail.",
   "auth.needAccountTitle": "Enregistrez votre planning",
   "auth.needAccountText": "Créez un compte gratuit pour cocher les tâches, fixer des budgets et enregistrer des prestataires. Vous pouvez continuer à explorer sans compte.",
-
   "demo.banner": "Mode démo · données enregistrées sur cet appareil uniquement",
   "demo.sample": "Exemple fictif",
   "demo.prices": "Prix d'exemple fictifs, uniquement pour la démonstration.",
@@ -267,7 +247,6 @@
   "demo.adminTitle": "Administrateur de démonstration",
   "demo.adminText": "En mode démo, vous pouvez ouvrir le tableau de bord avec un compte de démonstration local. Il n'existe que dans ce navigateur.",
   "demo.adminButton": "Ouvrir l'admin avec le compte démo",
-
   "common.back": "Retour",
   "common.close": "Fermer",
   "common.cancel": "Annuler",
@@ -292,17 +271,14 @@
   "common.clear": "Effacer",
   "common.seeAll": "Tout voir",
   "common.home": "Accueil",
-
   "error.generic": "Une erreur est survenue. Veuillez réessayer.",
   "error.amount": "Saisissez un montant valide.",
   "error.notFound": "Cette page n'existe plus.",
   "error.loadTitle": "Impossible de charger 3ARSSI",
   "error.loadText": "Vérifiez votre connexion et réessayez.",
-
   "role.user": "Utilisateur",
   "role.editor": "Éditeur",
   "role.admin": "Administrateur",
-
   "admin.title": "Tableau de bord admin",
   "admin.signInTitle": "Connexion administrateur",
   "admin.signedInAs": "Connecté en tant que {email} · {role}",
@@ -330,9 +306,8 @@
   "admin.attn.noContact": "Prestataires sans coordonnées",
   "admin.attn.demo": "Éléments de démo fictifs",
   "admin.storage": "Où sont stockées les données",
-  "admin.storageDemo": "Mode démo : les modifications sont enregistrées uniquement dans ce navigateur et ne sont PAS visibles sur les autres appareils. Connectez Supabase pour les partager (voir README).",
-  "admin.storageCloud": "Base de données hébergée (Supabase) : les modifications sont visibles par tous les utilisateurs, sur tous les appareils.",
-
+  "admin.storageDemo": "Mode démo : les modifications sont enregistrées uniquement dans ce navigateur et ne sont PAS visibles sur les autres appareils. Connectez la base de données hébergée pour les partager (voir README).",
+  "admin.storageCloud": "Base de données hébergée : les modifications sont visibles par tous les utilisateurs, sur tous les appareils.",
   "admin.eventsIntro": "Les événements montrés aux utilisateurs. Touchez un événement pour gérer ses catégories.",
   "admin.addEvent": "Ajouter un événement",
   "admin.editEvent": "Modifier l'événement",
@@ -409,14 +384,13 @@
   "admin.f.unit": "Unité",
   "admin.f.group": "Regrouper sous",
   "admin.f.code": "Code officiel",
-  "admin.imageUrlHint": "Facultatif. Collez un lien ou téléversez dans un élément de conseil.",
+  "admin.imageUrlHint": "Facultatif. Collez un lien d'image (https://…).",
   "admin.serviceTypesHint": "Les utilisateurs voient ces prestataires et articles de prix depuis cette catégorie.",
   "admin.regionAny": "Non lié à une wilaya",
   "admin.upload": "Téléverser une image",
   "admin.uploadImage": "Téléverser une photo ou une vidéo",
   "admin.image": "Image",
   "admin.video": "Vidéo",
-
   "admin.providersIntro": "Les prestataires sont gérés ici. Le contact se fait en dehors de 3ARSSI (WhatsApp, téléphone, Instagram).",
   "admin.addProvider": "Ajouter un prestataire",
   "admin.providerNameRequired": "Le nom commercial est obligatoire.",
@@ -428,13 +402,11 @@
   "admin.noOffers": "Aucune offre.",
   "admin.noPrices": "Aucun prix.",
   "admin.dateOrder": "La date de fin doit être après la date de début.",
-
   "admin.servicesIntro": "Types de prestataires (salles, photographes…). Regroupez, renommez, réordonnez ou masquez-les.",
   "admin.addService": "Ajouter un type de service",
   "admin.editService": "Modifier le type de service",
   "admin.providersCount": "{n} prestataires",
   "admin.groupHint": "Facultatif : en faire un sous-type d'un autre service.",
-
   "admin.pricesIntro": "Chaque article de prix est UN produit ou service comparable avec UNE unité. Seuls les relevés d'un même article sont combinés en fourchette.",
   "admin.addPriceItem": "Ajouter un article de prix",
   "admin.editPriceItem": "Modifier l'article de prix",
@@ -454,7 +426,6 @@
   "admin.unitHint": "Les estimations ne sont calculées que dans cette unité.",
   "admin.unitChangeWarn": "Changer l'unité affecte tous les relevés de prix de cet article.",
   "admin.stale": "Plus de 12 mois",
-
   "admin.translationsIntro": "Modifiez les textes de l'interface et repérez le contenu non traduit. Chaque langue est indépendante.",
   "admin.uiStrings": "Textes de l'interface",
   "admin.contentMissing": "Contenu manquant",
@@ -477,7 +448,6 @@
   "admin.entity.price_record": "Relevé de prix",
   "admin.entity.wilaya": "Wilaya",
   "admin.entity.commune": "Commune",
-
   "admin.regionsIntro": "Wilayas et communes utilisées par les prestataires, les prix et les conseils régionaux.",
   "admin.addWilaya": "Ajouter une wilaya",
   "admin.addCommune": "Ajouter une commune",
@@ -486,7 +456,6 @@
   "admin.communes": "Communes",
   "admin.communesCount": "{n} communes",
   "admin.codeRequired": "Saisissez le code de la wilaya.",
-
   "admin.demoIntro": "Éléments d'exemple fictifs pour explorer le produit. Ils sont toujours signalés comme exemples.",
   "admin.demoSafe": "Seuls les éléments marqués démo sont concernés. Votre vrai contenu n'est jamais touché.",
   "admin.removeDemo": "Supprimer tout le contenu démo",
@@ -495,10 +464,15 @@
   "admin.restoreDemoCloud": "Pour restaurer le contenu démo dans la base hébergée, exécutez supabase/seed/03_demo.sql (voir docs/BACKUP_RESTORE.md).",
   "admin.resetDevice": "Réinitialiser cet appareil",
   "admin.resetDeviceWarn": "Toutes les données du mode démo dans ce navigateur (comptes, plannings, modifications admin) seront effacées et le contenu de départ rechargé.",
-
   "admin.usersIntro": "Donnez le rôle d'éditeur (contenu) ou d'administrateur (contenu, utilisateurs, données démo).",
   "admin.role": "Rôle",
   "admin.adminOnly": "Seuls les administrateurs peuvent gérer les utilisateurs.",
   "admin.rolesHelp": "Les éditeurs gèrent le contenu. Les administrateurs gèrent aussi les utilisateurs et le contenu démo. Les rôles sont appliqués par la base de données.",
-  "admin.errorPermission": "Vous n'avez pas l'autorisation pour cette action."
+  "admin.errorPermission": "Vous n'avez pas l'autorisation pour cette action.",
+  "auth.errorBlocked": "Votre navigateur a bloqué la connexion. Autorisez les cookies pour ce site (sur iPhone : Réglages → Safari → désactivez « Empêcher le suivi intersite »), puis réessayez.",
+  "auth.resetTitle": "Choisir un nouveau mot de passe",
+  "auth.newPassword": "Nouveau mot de passe",
+  "auth.resetDone": "Votre mot de passe a été modifié. Vous pouvez maintenant vous connecter.",
+  "auth.resetInvalid": "Ce lien est invalide ou a expiré. Demandez-en un nouveau depuis la page de connexion.",
+  "auth.resetBack": "Retour à 3ARSSI"
 }

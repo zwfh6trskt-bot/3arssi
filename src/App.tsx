@@ -4,7 +4,7 @@ import { useI18n } from "./i18n/i18n";
 import { match, navigate, useLocation } from "./lib/router";
 import { AppProvider, useApp } from "./state/app";
 import { sideFromSlug } from "./state/viewmodel";
-import { AuthPage, LanguageSettings, ProfilePage, SettingsPage } from "./pages/Account";
+import { AuthPage, LanguageSettings, ProfilePage, ResetPasswordPage, SettingsPage } from "./pages/Account";
 import { BudgetsPage, EventBudgetPage } from "./pages/Budget";
 import { CategoryPage } from "./pages/CategoryPage";
 import { EventPage } from "./pages/EventPage";
@@ -21,6 +21,7 @@ function Routes() {
   useEffect(() => { document.title = "3ARSSI"; }, []);
 
   // First launch and landing stay intentionally bare (no banner, no nav).
+  if (path === "/reset-password") return <ResetPasswordPage />;
   if (!hasChosen) return <LanguageSelect />;
   if (path === "/") return <Landing />;
   return <><DemoModeBanner /><SpaceRoutes path={path} /></>;

@@ -105,6 +105,7 @@ const clone = <T>(x: T): T => JSON.parse(JSON.stringify(x));
 
 export class LocalDb implements Db {
   readonly mode = "local" as const;
+  readonly canUpload = true;
   private store: Store;
 
   constructor(private seed: () => Store) {

@@ -103,7 +103,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
     if (!u) { planRef.current = null; setPlan(null); setProfile(null); return null; }
     setPlanLoading(true);
     try {
-      const [p] = await db.select<Profile>("profiles", { id: u.id });
+      // Neon has no trigger on its auth tables: the profile is created on first use.
+      const p = db.mode === "neon"
+        ? await db.rpc<Profile>("ensure_profile")
+        : (await db.select<Profile>("profiles", { id: u.id }))[0];
       setProfile(p ?? null);
       const data = await loadPlan(u.id);
       planRef.current = data;

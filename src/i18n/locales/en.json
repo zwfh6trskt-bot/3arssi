@@ -2,7 +2,6 @@
   "lang.choose": "Choose your language",
   "currency.da": "DA",
   "brand.home": "3ARSSI home",
-
   "landing.welcome": "Everything for your wedding, in one calm place.",
   "landing.choose": "Whose side are you preparing?",
   "side.bride": "El 3rossa",
@@ -12,21 +11,18 @@
   "sideScope.bride": "El 3rossa",
   "sideScope.groom": "El 3ris",
   "sideScope.both": "Both sides",
-
   "nav.main": "Main navigation",
   "nav.events": "Events",
   "nav.providers": "Providers",
   "nav.budgets": "Budgets",
   "nav.saved": "Saved",
   "nav.profile": "Profile",
-
   "space.eyebrow.bride": "El 3rossa's space",
   "space.eyebrow.groom": "El 3ris's space",
   "space.title": "Your preparations",
   "space.intro": "Choose an event to see what to prepare, plan its budget and find providers.",
   "space.visitorHint": "You can explore freely. Create an account to save checklists, budgets and providers.",
   "space.switchTo": "Switch to {side}",
-
   "events.title": "Events",
   "events.event": "Event",
   "events.personalise": "Personalise",
@@ -47,7 +43,6 @@
   "events.removeTitle": "Remove “{name}”?",
   "events.removeSuggested": "It will disappear from your space. You can restore it later.",
   "events.removeCustom": "This event and its budget, checklist and expenses will be deleted.",
-
   "categories.title": "What to prepare",
   "categories.customise": "Customise",
   "categories.customiseIntro": "Hide, rename or reorder categories, or add your own.",
@@ -57,12 +52,10 @@
   "categories.newPlaceholder": "New category name",
   "categories.yours": "Your category",
   "categories.subcategories": "Subcategories",
-
   "checklist.title": "Checklist",
   "checklist.progress": "{done} of {total} done",
   "checklist.add": "Add a task",
   "checklist.addPlaceholder": "Add your own task",
-
   "guide.title": "Guidance",
   "kind.checklist": "Checklist item",
   "kind.suggestion": "Suggestion",
@@ -74,10 +67,8 @@
   "importance.optional": "Optional",
   "importance.regional": "Varies by region",
   "importance.regionalIn": "Regional · {place}",
-
   "notes.title": "Notes",
   "notes.placeholder": "Anything to remember…",
-
   "budget.pageTitle": "Event budgets",
   "budget.independentNote": "Each event has its own independent budget. They are never added together.",
   "budget.independentShort": "This budget belongs to this event only.",
@@ -112,7 +103,6 @@
   "budget.overspentBadge": "Over allocation",
   "budget.signInTitle": "Plan your budgets",
   "budget.signInText": "Sign in to set a budget for each event and track what you spend.",
-
   "expense.title": "Expenses",
   "expense.add": "Add expense",
   "expense.edit": "Edit expense",
@@ -130,7 +120,6 @@
   "expense.date": "Date",
   "expense.note": "Note",
   "expense.deleteTitle": "Delete this expense?",
-
   "estimate.title": "Price estimate",
   "estimate.add": "Estimate",
   "estimate.intro": "Estimate a cost from the price ranges providers have shared.",
@@ -150,13 +139,11 @@
   "estimate.save": "Save estimate",
   "estimate.setBudgetHint": "Allocate a budget to this category to see the status.",
   "estimate.disclaimer": "Estimates are indicative, not guaranteed. The provider's final quote may differ (delivery, setup, travel…).",
-
   "status.within": "Within budget",
   "status.may_exceed": "May exceed budget",
   "status.over": "Over budget",
   "status.unavailable": "Price unavailable",
   "status.no_budget": "No budget set",
-
   "unit.piece": "piece",
   "unit.kg": "kg",
   "unit.person": "person",
@@ -175,7 +162,6 @@
   "unitPlural.quote": "quotes",
   "priceStatus.indicative": "Indicative price",
   "priceStatus.confirmed": "Confirmed by provider",
-
   "providers.title": "Providers",
   "providers.search": "Search providers",
   "providers.serviceType": "Service type",
@@ -205,13 +191,11 @@
   "providers.availabilityManual": "Availability notes are entered manually and may not be current.",
   "providers.lastUpdated": "Information last updated {date}",
   "providers.whatsappGreeting": "Hello {name}, I found you on 3ARSSI.",
-
   "contact.title": "Contact",
   "contact.whatsapp": "WhatsApp",
   "contact.call": "Call",
   "contact.instagram": "Instagram",
   "contact.website": "Website",
-
   "saved.title": "Saved providers",
   "saved.intro": "Providers you want to keep in mind.",
   "saved.add": "Save provider",
@@ -222,11 +206,9 @@
   "saved.emptyText": "Tap the bookmark on a provider to keep it here.",
   "saved.signInTitle": "Keep your favourites",
   "saved.signInText": "Sign in to save providers and find them on any device.",
-
   "profile.guest": "Guest",
   "profile.guestText": "You're exploring without an account.",
   "profile.changeSpace": "Back to the start",
-
   "settings.title": "Settings",
   "settings.sub": "Language, account",
   "settings.language": "Language",
@@ -235,7 +217,6 @@
   "settings.data": "Your data",
   "settings.dataDemo": "Demo mode: everything is saved in this browser only. It won't appear on your other devices.",
   "settings.dataCloud": "Your plan is saved securely in your account and available on all your devices.",
-
   "auth.signIn": "Sign in",
   "auth.signOut": "Sign out",
   "auth.createAccount": "Create account",
@@ -257,7 +238,6 @@
   "auth.errorConfirm": "Please confirm your email first.",
   "auth.needAccountTitle": "Save your planning",
   "auth.needAccountText": "Create a free account to tick tasks, set budgets and save providers. You can keep exploring without one.",
-
   "demo.banner": "Demo mode · data is saved on this device only",
   "demo.sample": "Fictional sample",
   "demo.prices": "Fictional sample prices, for demonstration only.",
@@ -267,7 +247,6 @@
   "demo.adminTitle": "Demo administrator",
   "demo.adminText": "In demo mode you can open the admin dashboard with a local demo account. It only exists in this browser.",
   "demo.adminButton": "Open admin with the demo account",
-
   "common.back": "Back",
   "common.close": "Close",
   "common.cancel": "Cancel",
@@ -292,17 +271,14 @@
   "common.clear": "Clear",
   "common.seeAll": "See all",
   "common.home": "Home",
-
   "error.generic": "Something went wrong. Please try again.",
   "error.amount": "Enter a valid amount.",
   "error.notFound": "This page doesn't exist anymore.",
   "error.loadTitle": "We couldn't load 3ARSSI",
   "error.loadText": "Check your connection and try again.",
-
   "role.user": "User",
   "role.editor": "Editor",
   "role.admin": "Administrator",
-
   "admin.title": "Admin dashboard",
   "admin.signInTitle": "Administrator sign in",
   "admin.signedInAs": "Signed in as {email} · {role}",
@@ -330,9 +306,8 @@
   "admin.attn.noContact": "Providers without contact details",
   "admin.attn.demo": "Fictional demo records",
   "admin.storage": "Where data is stored",
-  "admin.storageDemo": "Demo mode: changes are saved in this browser only and are NOT visible on other devices. Connect Supabase to share changes (see README).",
-  "admin.storageCloud": "Hosted database (Supabase): changes are visible to all users on all devices.",
-
+  "admin.storageDemo": "Demo mode: changes are saved in this browser only and are NOT visible on other devices. Connect the hosted database to share changes (see README).",
+  "admin.storageCloud": "Hosted database: changes are visible to all users on all devices.",
   "admin.eventsIntro": "Events shown to users. Tap an event to manage its categories.",
   "admin.addEvent": "Add event",
   "admin.editEvent": "Edit event",
@@ -409,14 +384,13 @@
   "admin.f.unit": "Unit",
   "admin.f.group": "Group under",
   "admin.f.code": "Official code",
-  "admin.imageUrlHint": "Optional. Paste a link or upload in a guidance item.",
+  "admin.imageUrlHint": "Optional. Paste an image link (https://…).",
   "admin.serviceTypesHint": "Users see these providers and price items from this category.",
   "admin.regionAny": "Not tied to one wilaya",
   "admin.upload": "Upload image",
   "admin.uploadImage": "Upload photo or video",
   "admin.image": "Image",
   "admin.video": "Video",
-
   "admin.providersIntro": "Providers are managed here. Contact happens outside 3ARSSI (WhatsApp, phone, Instagram).",
   "admin.addProvider": "Add provider",
   "admin.providerNameRequired": "Business name is required.",
@@ -428,13 +402,11 @@
   "admin.noOffers": "No offers.",
   "admin.noPrices": "No prices yet.",
   "admin.dateOrder": "The end date must be after the start date.",
-
   "admin.servicesIntro": "Types of providers (halls, photographers…). Group, rename, reorder or hide them.",
   "admin.addService": "Add service type",
   "admin.editService": "Edit service type",
   "admin.providersCount": "{n} providers",
   "admin.groupHint": "Optional: make this a sub-type of another service.",
-
   "admin.pricesIntro": "Each price item is ONE comparable product or service with ONE unit. Only records of the same item are combined into a range.",
   "admin.addPriceItem": "Add price item",
   "admin.editPriceItem": "Edit price item",
@@ -454,7 +426,6 @@
   "admin.unitHint": "Estimates are only calculated in this unit.",
   "admin.unitChangeWarn": "Changing the unit affects every price record of this item.",
   "admin.stale": "Over 12 months",
-
   "admin.translationsIntro": "Edit interface text and see content missing a translation. Each language is independent.",
   "admin.uiStrings": "Interface text",
   "admin.contentMissing": "Content missing",
@@ -477,7 +448,6 @@
   "admin.entity.price_record": "Price record",
   "admin.entity.wilaya": "Wilaya",
   "admin.entity.commune": "Commune",
-
   "admin.regionsIntro": "Wilayas and communes used by providers, prices and regional guidance.",
   "admin.addWilaya": "Add wilaya",
   "admin.addCommune": "Add commune",
@@ -486,7 +456,6 @@
   "admin.communes": "Communes",
   "admin.communesCount": "{n} communes",
   "admin.codeRequired": "Enter the wilaya code.",
-
   "admin.demoIntro": "Fictional sample records used to explore the product. They are always labelled as samples.",
   "admin.demoSafe": "Only records flagged as demo are affected. Your real content is never touched.",
   "admin.removeDemo": "Remove all demo content",
@@ -495,10 +464,15 @@
   "admin.restoreDemoCloud": "To restore demo content in the hosted database, run supabase/seed/03_demo.sql (see docs/BACKUP_RESTORE.md).",
   "admin.resetDevice": "Reset this device",
   "admin.resetDeviceWarn": "All demo-mode data in this browser (accounts, plans, admin changes) will be erased and the starter content reloaded.",
-
   "admin.usersIntro": "Give people the editor role (content) or administrator role (content, users, demo data).",
   "admin.role": "Role",
   "admin.adminOnly": "Only administrators can manage users.",
   "admin.rolesHelp": "Editors manage content. Administrators also manage users and demo content. Roles are enforced by the database.",
-  "admin.errorPermission": "You don't have permission for this action."
+  "admin.errorPermission": "You don't have permission for this action.",
+  "auth.errorBlocked": "Your browser blocked the sign-in. Allow cookies for this site (on iPhone: Settings → Safari → turn off \"Prevent Cross-Site Tracking\"), then try again.",
+  "auth.resetTitle": "Choose a new password",
+  "auth.newPassword": "New password",
+  "auth.resetDone": "Your password has been changed. You can now sign in.",
+  "auth.resetInvalid": "This link is invalid or has expired. Ask for a new one from the sign-in page.",
+  "auth.resetBack": "Back to 3ARSSI"
 }

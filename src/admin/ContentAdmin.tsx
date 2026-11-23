@@ -347,10 +347,10 @@ function ItemEditor({ categoryId, item, onClose }: { categoryId: string; item: C
         {kind === "image" && (
           <div className="stack-sm">
             <TextField label={t("admin.f.imageUrl")} value={image} onChange={setImage} dir="ltr" />
-            <label className="btn small secondary" style={{ alignSelf: "flex-start" }}>
+            {db.canUpload && <label className="btn small secondary" style={{ alignSelf: "flex-start" }}>
               <Icon name="image" size={16} />{t("admin.upload")}
               <input type="file" accept="image/*" hidden onChange={(e) => e.target.files?.[0] && upload(e.target.files[0])} />
-            </label>
+            </label>}
             {image && <img src={asset(image)} alt="" style={{ maxHeight: 160, borderRadius: 12, objectFit: "cover" }} />}
           </div>
         )}

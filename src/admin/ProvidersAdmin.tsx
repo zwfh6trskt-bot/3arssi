@@ -178,7 +178,7 @@ function MediaEditor({ provider }: { provider: Provider }) {
           ))}
         </div>
       )}
-      <label className="btn secondary">
+      {db.canUpload && <label className="btn secondary">
         <Icon name="image" size={18} />{t("admin.uploadImage")}
         <input type="file" accept="image/*,video/mp4,video/webm" hidden disabled={busy} onChange={async (e) => {
           const file = e.target.files?.[0]; if (!file) return;
@@ -187,7 +187,7 @@ function MediaEditor({ provider }: { provider: Provider }) {
             sort_order: Math.max(0, ...media.map((m) => m.sort_order)) + 10 }); });
           e.target.value = "";
         }} />
-      </label>
+      </label>}
       <form className="row wrap" onSubmit={(e) => { e.preventDefault(); if (url.trim()) { add(url.trim()); setUrl(""); } }}>
         <select className="select" style={{ width: 120 }} value={kind} onChange={(e) => setKind(e.target.value as "image" | "video")} aria-label={t("admin.f.kind")}>
           <option value="image">{t("admin.image")}</option><option value="video">{t("admin.video")}</option>

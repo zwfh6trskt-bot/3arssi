@@ -134,6 +134,7 @@ export function AuthPage({ side }: { side: Side }) {
 
   const errorText = (e: string | null) => {
     if (!e) return null;
+    if (/session_blocked/i.test(e)) return t("auth.errorBlocked");
     if (/invalid|credentials/i.test(e)) return t("auth.errorInvalid");
     if (/already|exists|registered/i.test(e)) return t("auth.errorExists");
     if (/weak|password/i.test(e)) return t("auth.errorWeak");
@@ -193,5 +194,34 @@ export function AuthPage({ side }: { side: Side }) {
         )}
       </div>
     </SpaceLayout>
+  );
+}
+
+/** Landing page of the "reset your password" email link (?token=…). */
+export function ResetPasswordPage() {
+  const { t } = useI18n();
+  const { query } = useLocation();
+  const token = query.get("token") ?? "";
+  const [password, setPassword] = useState("");
+  const [doneMsg, setDoneMsg] = useState(false);
+  const { busy, error, run } = useAsync();
+  const supported = !!auth.completePasswordReset && !!token && !query.get("error");
+  return (
+    <main className="screen-center">
+      <div className="stack-lg" style={{ width: "100%", maxWidth: 420 }}>
+        <h1 className="h1">{t("auth.resetTitle")}</h1>
+        {!supported ? <p className="muted">{t("auth.resetInvalid")}</p>
+          : doneMsg ? <p>{t("auth.resetDone")}</p>
+          : (
+            <form className="stack" onSubmit={(e) => { e.preventDefault(); run(async () => { await auth.completePasswordReset!(token, password); setDoneMsg(true); }); }}>
+              <TextField label={t("auth.newPassword")} value={password} onChange={setPassword} type="password"
+                autoComplete="new-password" hint={t("auth.passwordHint")} dir="ltr" />
+              {error && <p className="error-text" role="alert">{/weak|password|short/i.test(error) ? t("auth.errorWeak") : t("auth.resetInvalid")}</p>}
+              <button className="btn block" disabled={busy || password.length < 8}>{t("common.save")}</button>
+            </form>
+          )}
+        <Link className="btn secondary block" to="/">{t("auth.resetBack")}</Link>
+      </div>
+    </main>
   );
 }

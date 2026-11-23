@@ -2,7 +2,6 @@
   "lang.choose": "اختر لغتك",
   "currency.da": "دج",
   "brand.home": "الصفحة الرئيسية لعرسي",
-
   "landing.welcome": "كل ما يخص عرسك، منظَّم في مكان واحد وبكل هدوء.",
   "landing.choose": "أيّ جهة تحضّر؟",
   "side.bride": "العروسة",
@@ -12,21 +11,18 @@
   "sideScope.bride": "العروسة",
   "sideScope.groom": "العريس",
   "sideScope.both": "الجهتان",
-
   "nav.main": "التنقل الرئيسي",
   "nav.events": "المناسبات",
   "nav.providers": "مقدمو الخدمات",
   "nav.budgets": "الميزانيات",
   "nav.saved": "المحفوظات",
   "nav.profile": "حسابي",
-
   "space.eyebrow.bride": "فضاء العروسة",
   "space.eyebrow.groom": "فضاء العريس",
   "space.title": "تحضيراتك",
   "space.intro": "اختر مناسبة لترى ما يجب تحضيره، وتخطط لميزانيتها، وتجد مقدمي الخدمات.",
   "space.visitorHint": "يمكنك التصفح بحرية. أنشئ حساباً لحفظ القوائم والميزانيات ومقدمي الخدمات.",
   "space.switchTo": "الانتقال إلى {side}",
-
   "events.title": "المناسبات",
   "events.event": "المناسبة",
   "events.personalise": "تخصيص",
@@ -47,7 +43,6 @@
   "events.removeTitle": "حذف «{name}»؟",
   "events.removeSuggested": "ستختفي من فضائك. يمكنك استرجاعها لاحقاً.",
   "events.removeCustom": "سيتم حذف هذه المناسبة مع ميزانيتها وقائمتها ومصاريفها.",
-
   "categories.title": "ما يجب تحضيره",
   "categories.customise": "تخصيص",
   "categories.customiseIntro": "أخفِ الفئات أو أعد تسميتها أو رتّبها، أو أضف فئاتك الخاصة.",
@@ -57,12 +52,10 @@
   "categories.newPlaceholder": "اسم الفئة الجديدة",
   "categories.yours": "فئتك",
   "categories.subcategories": "الفئات الفرعية",
-
   "checklist.title": "قائمة التحضير",
   "checklist.progress": "{done} من {total} منجزة",
   "checklist.add": "إضافة مهمة",
   "checklist.addPlaceholder": "أضف مهمتك الخاصة",
-
   "guide.title": "نصائح وإرشادات",
   "kind.checklist": "عنصر في القائمة",
   "kind.suggestion": "اقتراح",
@@ -74,10 +67,8 @@
   "importance.optional": "اختياري",
   "importance.regional": "يختلف حسب المنطقة",
   "importance.regionalIn": "جهوي · {place}",
-
   "notes.title": "ملاحظات",
   "notes.placeholder": "شيء تريد تذكّره…",
-
   "budget.pageTitle": "ميزانيات المناسبات",
   "budget.independentNote": "لكل مناسبة ميزانيتها المستقلة. لا تُجمع الميزانيات أبداً.",
   "budget.independentShort": "هذه الميزانية خاصة بهذه المناسبة فقط.",
@@ -112,7 +103,6 @@
   "budget.overspentBadge": "تجاوز المخصص",
   "budget.signInTitle": "خطّط لميزانياتك",
   "budget.signInText": "سجّل الدخول لتحديد ميزانية لكل مناسبة ومتابعة مصاريفك.",
-
   "expense.title": "المصاريف",
   "expense.add": "إضافة مصروف",
   "expense.edit": "تعديل المصروف",
@@ -130,7 +120,6 @@
   "expense.date": "التاريخ",
   "expense.note": "ملاحظة",
   "expense.deleteTitle": "حذف هذا المصروف؟",
-
   "estimate.title": "تقدير السعر",
   "estimate.add": "تقدير",
   "estimate.intro": "قدّر التكلفة انطلاقاً من مجالات الأسعار التي قدّمها مقدمو الخدمات.",
@@ -150,13 +139,11 @@
   "estimate.save": "حفظ التقدير",
   "estimate.setBudgetHint": "خصّص ميزانية لهذه الفئة لرؤية الحالة.",
   "estimate.disclaimer": "التقديرات استرشادية وغير مضمونة. قد يختلف السعر النهائي لمقدّم الخدمة (التوصيل، التركيب، التنقل…).",
-
   "status.within": "ضمن الميزانية",
   "status.may_exceed": "قد يتجاوز الميزانية",
   "status.over": "يتجاوز الميزانية",
   "status.unavailable": "السعر غير متوفر",
   "status.no_budget": "لم تُحدَّد ميزانية",
-
   "unit.piece": "قطعة",
   "unit.kg": "كغ",
   "unit.person": "شخص",
@@ -175,7 +162,6 @@
   "unitPlural.quote": "عروض",
   "priceStatus.indicative": "سعر استرشادي",
   "priceStatus.confirmed": "مؤكَّد من مقدّم الخدمة",
-
   "providers.title": "مقدمو الخدمات",
   "providers.search": "ابحث عن مقدّم خدمة",
   "providers.serviceType": "نوع الخدمة",
@@ -205,13 +191,11 @@
   "providers.availabilityManual": "ملاحظات التوفر تُدخل يدوياً وقد لا تكون محدّثة.",
   "providers.lastUpdated": "آخر تحديث للمعلومات: {date}",
   "providers.whatsappGreeting": "السلام عليكم {name}، وجدتكم على تطبيق عرسي.",
-
   "contact.title": "التواصل",
   "contact.whatsapp": "واتساب",
   "contact.call": "اتصال",
   "contact.instagram": "إنستغرام",
   "contact.website": "الموقع",
-
   "saved.title": "مقدمو الخدمات المحفوظون",
   "saved.intro": "مقدمو الخدمات الذين تريد تذكّرهم.",
   "saved.add": "حفظ مقدّم الخدمة",
@@ -222,11 +206,9 @@
   "saved.emptyText": "اضغط على علامة الحفظ في صفحة مقدّم الخدمة ليظهر هنا.",
   "saved.signInTitle": "احتفظ بمفضّلاتك",
   "saved.signInText": "سجّل الدخول لحفظ مقدمي الخدمات والعثور عليهم على كل أجهزتك.",
-
   "profile.guest": "زائر",
   "profile.guestText": "أنت تتصفح بدون حساب.",
   "profile.changeSpace": "العودة إلى البداية",
-
   "settings.title": "الإعدادات",
   "settings.sub": "اللغة، الحساب",
   "settings.language": "اللغة",
@@ -235,7 +217,6 @@
   "settings.data": "بياناتك",
   "settings.dataDemo": "وضع العرض التجريبي: كل شيء محفوظ في هذا المتصفح فقط ولن يظهر على أجهزتك الأخرى.",
   "settings.dataCloud": "مخططك محفوظ بأمان في حسابك ومتاح على كل أجهزتك.",
-
   "auth.signIn": "تسجيل الدخول",
   "auth.signOut": "تسجيل الخروج",
   "auth.createAccount": "إنشاء حساب",
@@ -257,7 +238,6 @@
   "auth.errorConfirm": "يرجى تأكيد بريدك الإلكتروني أولاً.",
   "auth.needAccountTitle": "احفظ تخطيطك",
   "auth.needAccountText": "أنشئ حساباً مجانياً لتأشير المهام وتحديد الميزانيات وحفظ مقدمي الخدمات. يمكنك مواصلة التصفح بدون حساب.",
-
   "demo.banner": "وضع العرض التجريبي · البيانات محفوظة على هذا الجهاز فقط",
   "demo.sample": "مثال وهمي",
   "demo.prices": "أسعار وهمية للتوضيح فقط.",
@@ -267,7 +247,6 @@
   "demo.adminTitle": "مسؤول تجريبي",
   "demo.adminText": "في وضع العرض التجريبي يمكنك فتح لوحة الإدارة بحساب تجريبي محلي موجود في هذا المتصفح فقط.",
   "demo.adminButton": "فتح لوحة الإدارة بالحساب التجريبي",
-
   "common.back": "رجوع",
   "common.close": "إغلاق",
   "common.cancel": "إلغاء",
@@ -292,17 +271,14 @@
   "common.clear": "مسح",
   "common.seeAll": "عرض الكل",
   "common.home": "الرئيسية",
-
   "error.generic": "حدث خطأ. يرجى إعادة المحاولة.",
   "error.amount": "أدخل مبلغاً صحيحاً.",
   "error.notFound": "هذه الصفحة لم تعد موجودة.",
   "error.loadTitle": "تعذّر تحميل عرسي",
   "error.loadText": "تحقّق من اتصالك وأعد المحاولة.",
-
   "role.user": "مستخدم",
   "role.editor": "محرّر",
   "role.admin": "مسؤول",
-
   "admin.title": "لوحة الإدارة",
   "admin.signInTitle": "دخول المسؤول",
   "admin.signedInAs": "متصل باسم {email} · {role}",
@@ -330,9 +306,8 @@
   "admin.attn.noContact": "مقدمو خدمات بدون معلومات اتصال",
   "admin.attn.demo": "سجلات تجريبية وهمية",
   "admin.storage": "أين تُحفظ البيانات",
-  "admin.storageDemo": "وضع العرض التجريبي: تُحفظ التعديلات في هذا المتصفح فقط ولا تظهر على الأجهزة الأخرى. اربط Supabase لمشاركتها (راجع README).",
-  "admin.storageCloud": "قاعدة بيانات مستضافة (Supabase): التعديلات تظهر لكل المستخدمين على كل الأجهزة.",
-
+  "admin.storageDemo": "وضع العرض التجريبي: تُحفظ التعديلات في هذا المتصفح فقط ولا تظهر على الأجهزة الأخرى. اربط قاعدة البيانات المستضافة لمشاركتها (راجع README).",
+  "admin.storageCloud": "قاعدة بيانات مستضافة: التعديلات تظهر لكل المستخدمين على كل الأجهزة.",
   "admin.eventsIntro": "المناسبات المعروضة للمستخدمين. اضغط على مناسبة لإدارة فئاتها.",
   "admin.addEvent": "إضافة مناسبة",
   "admin.editEvent": "تعديل المناسبة",
@@ -409,14 +384,13 @@
   "admin.f.unit": "الوحدة",
   "admin.f.group": "ضمن مجموعة",
   "admin.f.code": "الرمز الرسمي",
-  "admin.imageUrlHint": "اختياري. ألصق رابطاً أو ارفع صورة في عنصر إرشادي.",
+  "admin.imageUrlHint": "اختياري. ألصق رابط صورة (https://…).",
   "admin.serviceTypesHint": "يرى المستخدمون مقدمي الخدمات وعناصر الأسعار هذه انطلاقاً من هذه الفئة.",
   "admin.regionAny": "غير مرتبط بولاية",
   "admin.upload": "رفع صورة",
   "admin.uploadImage": "رفع صورة أو فيديو",
   "admin.image": "صورة",
   "admin.video": "فيديو",
-
   "admin.providersIntro": "تُدار هنا بيانات مقدمي الخدمات. يتم التواصل خارج عرسي (واتساب، هاتف، إنستغرام).",
   "admin.addProvider": "إضافة مقدّم خدمة",
   "admin.providerNameRequired": "الاسم التجاري إلزامي.",
@@ -428,13 +402,11 @@
   "admin.noOffers": "لا توجد عروض.",
   "admin.noPrices": "لا توجد أسعار بعد.",
   "admin.dateOrder": "يجب أن يكون تاريخ النهاية بعد تاريخ البداية.",
-
   "admin.servicesIntro": "أنواع مقدمي الخدمات (قاعات، مصورون…). جمّعها أو أعد تسميتها أو رتّبها أو أخفها.",
   "admin.addService": "إضافة نوع خدمة",
   "admin.editService": "تعديل نوع الخدمة",
   "admin.providersCount": "{n} مقدّمي خدمات",
   "admin.groupHint": "اختياري: اجعلها نوعاً فرعياً لخدمة أخرى.",
-
   "admin.pricesIntro": "كل عنصر سعر هو منتج أو خدمة واحدة قابلة للمقارنة بوحدة واحدة. لا تُجمع في مجال واحد إلا سجلات العنصر نفسه.",
   "admin.addPriceItem": "إضافة عنصر سعر",
   "admin.editPriceItem": "تعديل عنصر السعر",
@@ -454,7 +426,6 @@
   "admin.unitHint": "لا تُحسب التقديرات إلا بهذه الوحدة.",
   "admin.unitChangeWarn": "تغيير الوحدة يؤثر على كل سجلات أسعار هذا العنصر.",
   "admin.stale": "أكثر من 12 شهراً",
-
   "admin.translationsIntro": "عدّل نصوص الواجهة واطّلع على المحتوى غير المترجم. كل لغة مستقلة.",
   "admin.uiStrings": "نصوص الواجهة",
   "admin.contentMissing": "محتوى ناقص",
@@ -477,7 +448,6 @@
   "admin.entity.price_record": "سجل سعر",
   "admin.entity.wilaya": "ولاية",
   "admin.entity.commune": "بلدية",
-
   "admin.regionsIntro": "الولايات والبلديات المستعملة لمقدمي الخدمات والأسعار والإرشادات الجهوية.",
   "admin.addWilaya": "إضافة ولاية",
   "admin.addCommune": "إضافة بلدية",
@@ -486,7 +456,6 @@
   "admin.communes": "البلديات",
   "admin.communesCount": "{n} بلديات",
   "admin.codeRequired": "أدخل رمز الولاية.",
-
   "admin.demoIntro": "سجلات وهمية للتعرّف على المنتج. تُعرض دائماً على أنها أمثلة.",
   "admin.demoSafe": "تتأثر فقط السجلات المعلَّمة كتجريبية. لا يُمسّ محتواك الحقيقي أبداً.",
   "admin.removeDemo": "حذف كل المحتوى التجريبي",
@@ -495,10 +464,15 @@
   "admin.restoreDemoCloud": "لاسترجاع المحتوى التجريبي في القاعدة المستضافة، شغّل supabase/seed/03_demo.sql (راجع docs/BACKUP_RESTORE.md).",
   "admin.resetDevice": "إعادة ضبط هذا الجهاز",
   "admin.resetDeviceWarn": "ستُمسح كل بيانات وضع العرض التجريبي في هذا المتصفح (الحسابات، المخططات، تعديلات الإدارة) ويُعاد تحميل المحتوى الأولي.",
-
   "admin.usersIntro": "امنح دور المحرّر (المحتوى) أو المسؤول (المحتوى، المستخدمون، البيانات التجريبية).",
   "admin.role": "الدور",
   "admin.adminOnly": "يمكن للمسؤولين فقط إدارة المستخدمين.",
   "admin.rolesHelp": "يدير المحرّرون المحتوى. ويدير المسؤولون أيضاً المستخدمين والمحتوى التجريبي. تُطبَّق الأدوار من طرف قاعدة البيانات.",
-  "admin.errorPermission": "لا تملك صلاحية القيام بهذا الإجراء."
+  "admin.errorPermission": "لا تملك صلاحية القيام بهذا الإجراء.",
+  "auth.errorBlocked": "منع المتصفح تسجيل الدخول. اسمح بملفات تعريف الارتباط لهذا الموقع (على iPhone: الإعدادات ← Safari ← أوقف «منع التتبع عبر المواقع») ثم أعد المحاولة.",
+  "auth.resetTitle": "اختيار كلمة مرور جديدة",
+  "auth.newPassword": "كلمة المرور الجديدة",
+  "auth.resetDone": "تم تغيير كلمة المرور. يمكنك الآن تسجيل الدخول.",
+  "auth.resetInvalid": "هذا الرابط غير صالح أو انتهت صلاحيته. اطلب رابطاً جديداً من صفحة تسجيل الدخول.",
+  "auth.resetBack": "العودة إلى 3ARSSI"
 }
