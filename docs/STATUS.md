@@ -4,13 +4,17 @@ _Last updated 23 Nov 2026._
 
 ## Honest summary
 
-* The full application (client and admin) is built and passes **47 browser
-  acceptance checks** and **21 unit tests** in **demo mode** (data in the browser).
-* The **hosted database layer is written but not yet verified.** A Supabase
-  project could not be created: the account had already reached Supabase's
-  limit of 2 active free projects. Until it is provisioned and tested,
-  **cross-device synchronisation is not claimed to work.**
-* Nothing has been deployed to Netlify/Vercel yet.
+* **Live site:** https://zwfh6trskt-bot.github.io/3arssi/ (GitHub Pages,
+  rebuilt automatically on every push to `main`).
+* **Hosted database: Neon** (project `3arssi`, Frankfurt): Postgres + Neon Auth
+  (accounts) + Neon Data API. Schema, Row Level Security and starter content are
+  applied. Supabase was dropped because no free project slot was available; the
+  Supabase adapter and SQL are kept in `supabase/` as an alternative.
+* The interface passes **47 browser acceptance checks** and **21 unit tests**
+  (demo mode), and the **real Neon adapter passed a 40-step end-to-end test**
+  against the hosted services (see TESTING.md) — including cross-device sync.
+* Not yet seen working **in a real phone browser**: sign-in depends on the
+  browser accepting Neon Auth's session cookie (see “Known limitations”).
 
 ## Genuinely functional (tested in the browser, demo mode)
 
@@ -39,23 +43,38 @@ _Last updated 23 Nov 2026._
 | Admin: users & roles | ✅ implemented (hosted mode only — needs the database) |
 | No horizontal overflow: 16 screens × 7 widths (320→1440 px) × EN & AR | ✅ tested |
 
-## Written, not yet verified (needs your Supabase project)
+## Verified against the hosted Neon services (23 Nov 2026)
 
-| Item | Why not verified |
+Run by `tests/integration/neon-flow.ts`, which drives the real
+`src/data/db/neon.ts` adapter from a server, simulating three browsers
+(“phone”, “laptop”, “other user”), each with its own cookies and storage:
+
+| Check | Result |
 |---|---|
-| SQL migrations, Row Level Security, roles, storage bucket | No database could be provisioned |
-| Sign-up / sign-in with Supabase Auth, email confirmation, password reset | Same |
-| Cross-device sync (admin change on device A visible on device B) | Same |
-| Media uploads to Supabase Storage | Same |
-| Netlify / Vercel deployment | No hosting account connected |
-| `bun install` from the public registry, `bun run typecheck` | This workspace had no internet access for packages; the build was verified with locally available React 19.2.8 |
+| Visitor without account reads events and all 1,332 translations (paged) | ✅ |
+| Visitor cannot read profiles | ✅ |
+| Sign up, profile created (`ensure_profile`), plan + 9 events created | ✅ |
+| Rename/disable event, custom event, per-event budget (insert + merge), allocation, expense (insert/update), task, estimate, saved provider, language preference | ✅ |
+| User cannot make themselves admin, edit content, or list users | ✅ (blocked by the database) |
+| App reopened: still signed in, data still there | ✅ |
+| **Second device signs in → sees the same plan; edits budget → first device sees the change** | ✅ |
+| Another account sees none of it and cannot modify or delete it | ✅ |
+| Sign out, wrong password rejected | ✅ |
 
-As soon as you free a Supabase project slot (pause or delete one project, or
-upgrade), these can be applied and tested — see [DEPLOYMENT.md](DEPLOYMENT.md).
+Test accounts were deleted afterwards; the database contains no users.
+
+## Not yet verified
+
+| Item | Why |
+|---|---|
+| Sign-in in a real phone browser (Safari iPhone, Chrome Android) | Could not open the site from this workspace; please test |
+| Password-reset email (sent by Neon's shared email sender) | Needs a real mailbox |
+| Admin dashboard against the hosted database | Needs your account promoted to admin |
+| Media uploads | **Not available with Neon** in this version: admins paste image/video links instead (upload buttons are hidden) |
 
 ## Simulated / limited in demo mode
 
-* **Storage:** browser `localStorage` only; not shared between devices or browsers.
+* **Storage (demo mode only):** browser `localStorage`; not shared between devices. The live site uses Neon.
 * **Accounts:** local accounts with hashed passwords — *not* real security.
 * **Admin access:** guarded in the interface only. In hosted mode, the
   database enforces roles (RLS); in demo mode there is nothing to protect.
@@ -74,6 +93,14 @@ upgrade), these can be applied and tested — see [DEPLOYMENT.md](DEPLOYMENT.md)
 * Native iOS/Android apps (see [ROADMAP.md](ROADMAP.md))
 
 ## Known limitations / decisions to revisit
+
+* **Sign-in relies on a cookie set by Neon Auth's domain** (Partitioned/CHIPS,
+  SameSite=None). Neon Auth does not accept the session token as a header
+  (tested), so a browser that blocks this cookie cannot sign in: the app then
+  shows a clear message. If this affects iPhones, the fix is to serve the site
+  and auth from the same domain (custom domain + proxy) — see ROADMAP.md.
+* **No file uploads in hosted mode** (Neon storage needs a server to sign
+  uploads). Admins paste links; a small Neon Function can add uploads later.
 
 * Budgets are **per event and per side**. An event shared by both sides has
   one checklist but two independent budgets (bride's family and groom's family).

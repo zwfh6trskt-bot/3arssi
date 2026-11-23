@@ -22,3 +22,17 @@ Screenshots: `SCREENSHOTS=1 node tests/e2e/run.mjs` → `tests/screenshots/`.
 - [ ] Backup and restore (BACKUP_RESTORE.md) on a spare project
 - [ ] Clone from GitHub and run with the README on another computer
 - [ ] Supabase *Advisors* show no security warnings after migrations
+
+## Hosted (Neon) end-to-end test
+
+`tests/integration/neon-flow.ts` exercises the real Neon adapter against the
+live Neon Auth and Data API: visitor access, sign-up, every kind of personal
+write the app performs, role/RLS protections, session restore, **two devices
+on one account (sync)** and a second account (isolation). It simulates each
+browser with its own cookie jar and storage.
+
+It was run on 23 Nov 2026 as a temporary Neon Function (the workspace itself
+had no network access): **40/40 checks passed**. To run it again, bundle it
+(`bun build tests/integration/neon-flow.ts --target=node --format=esm`), call
+`runFlow(authUrl, dataApiUrl, report)` from any Node 20+ script with network
+access, then delete the `flow-…@example.com` / `other-…@example.com` users.

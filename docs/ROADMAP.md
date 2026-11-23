@@ -29,3 +29,11 @@
 
 Each phase adds tables or screens without rebuilding the existing ones;
 migrations are additive and the data layer is behind one interface.
+
+## Hosting follow-ups (Neon)
+
+* **Same-domain auth** if some browsers refuse Neon Auth's cookie: put the site
+  on a custom domain and proxy `/auth` to Neon Auth (e.g. Cloudflare in front of
+  GitHub Pages), so the session cookie becomes first-party.
+* **Uploads:** a small Neon Function that checks the admin's JWT and returns a
+  presigned URL for a Neon storage bucket; the admin upload buttons then return.

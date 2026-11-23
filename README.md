@@ -6,12 +6,11 @@ event-specific categories, checklists, guidance, providers, independent
 per-event budgets and price estimates. Everything is available in Arabic (RTL),
 French and English. Content is managed by the owner in an admin dashboard.
 
-> **Status (23 Nov 2026):** the application is complete and tested in
-> *device-only demo mode*. The hosted database (Supabase) is fully written
-> (migrations + seeds + client), but it has **not yet been provisioned or
-> tested**. Until it is, nothing is shared between devices. See
-> [docs/STATUS.md](docs/STATUS.md) for exactly what works, what is
-> simulated and what is postponed.
+> **Live:** https://zwfh6trskt-bot.github.io/3arssi/ — hosted on GitHub Pages,
+> data and accounts in **Neon** (Postgres + Neon Auth + Data API), shared
+> across devices. Cross-device sync and database security were verified with
+> an end-to-end test of the real adapter; sign-in in a real phone browser is
+> still to be confirmed. Exact details: [docs/STATUS.md](docs/STATUS.md).
 
 ---
 
@@ -27,8 +26,8 @@ bun run dev          # http://localhost:3000  (hot reload)
 With no `.env`, the app runs in **demo mode**: starter content and fictional
 sample providers are loaded into your browser, and data stays in that browser.
 
-To use the hosted database, copy `.env.example` to `.env`, fill in your Supabase
-URL and publishable key, and restart. Full steps: [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+To use the hosted database, copy `.env.example` to `.env`, fill in the two
+`PUBLIC_NEON_*` URLs, and restart. Full steps: [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
 | Command | What it does |
 |---|---|

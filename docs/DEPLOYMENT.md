@@ -1,11 +1,55 @@
 # Deployment
 
-Target setup: **GitHub** (code) → **Netlify or Vercel** (website) → **Supabase** (database, accounts, files).
-All three have free plans; see [COSTS.md](COSTS.md).
+## Current live setup (23 Nov 2026)
 
-> Nothing below has been done for you yet. Follow the steps in order.
+| Piece | Service | Where |
+|---|---|---|
+| Code | GitHub | https://github.com/zwfh6trskt-bot/3arssi |
+| Website | GitHub Pages (free) | https://zwfh6trskt-bot.github.io/3arssi/ |
+| Database, accounts | Neon (free plan), project `3arssi`, region Frankfurt | Neon Console → project `3arssi` |
 
-## 1. Put the code on GitHub
+**How a change goes live:** push to `main` → the workflow
+`.github/workflows/deploy-pages.yml` installs dependencies, type-checks, runs
+the unit tests, builds with `PUBLIC_BASE_PATH=/3arssi` and the Neon URLs, and
+publishes to Pages (about one minute). Settings → Pages → Source must stay on
+**GitHub Actions**.
+
+**Neon pieces:**
+* Neon Auth (managed Better Auth): email + password, no email confirmation
+  required. Trusted domain: `https://zwfh6trskt-bot.github.io`.
+* Neon Data API (PostgREST-compatible) on database `neondb`, schema `public`.
+  CORS limited to the site and `http://localhost:3000`.
+* Schema: `neon/migrations/0001…0003` (ported from the Supabase files: users
+  live in `neon_auth."user"`, the visitor role is `anonymous`, and
+  `ensure_profile()` replaces the sign-up trigger). Content: `neon/seed/01…03`.
+* `neon/functions/setup/index.mjs` is the one-off function that applied those
+  files (it downloads them from a pinned commit). It was deleted after use.
+
+**Make someone admin** (Neon Console → SQL Editor):
+```sql
+update public.profiles set role = 'admin'
+where id = (select id from neon_auth."user" where email = 'you@example.com');
+```
+The person must have signed in once on the site first (that creates the profile).
+
+**Apply the schema to a new Neon project:** run the three files in
+`neon/migrations/` then `neon/seed/01_reference.sql` and `02_starter.sql`
+(and optionally `03_demo.sql`) in the SQL Editor, in that order. Enable Neon
+Auth and the Data API on the branch first.
+
+**Local development against Neon:** put the two `PUBLIC_NEON_*` values in
+`.env`, then `bun run dev` (localhost is allowed by Neon Auth).
+
+---
+
+## Alternative: Supabase + Netlify/Vercel
+
+The Supabase adapter and SQL (`supabase/`) are kept and work the same way; the
+app uses them when `PUBLIC_SUPABASE_URL` and `PUBLIC_SUPABASE_ANON_KEY` are set
+and the Neon variables are empty. They were written but never run against a
+real Supabase project.
+
+### 1. Put the code on GitHub
 
 1. Create a free account at https://github.com and a new **private** repository named `3arssi` (no README).
 2. On your computer, in the project folder:
@@ -20,7 +64,7 @@ All three have free plans; see [COSTS.md](COSTS.md).
    ```
    `.gitignore` already excludes `node_modules/`, `dist/` and `.env` files.
 
-## 2. Create the Supabase project
+### 2. Create the Supabase project
 
 1. Sign in at https://supabase.com → **New project**.
    * Organisation: yours. Name: `3arssi`. Region: **West EU (Paris)** is the closest to Algeria.
@@ -68,14 +112,14 @@ Dashboard → **Project Settings → API Keys**:
 
 Never use the `service_role`/secret key in the website.
 
-## 3. Configure locally
+### 3. Configure locally
 
 ```bash
 cp .env.example .env      # then fill the two PUBLIC_ values
 bun run dev               # the demo-mode banner disappears when connected
 ```
 
-## 4. Deploy the website
+### 4. Deploy the website
 
 ### Netlify
 1. https://app.netlify.com → **Add new site → Import from Git** → choose the GitHub repo.
@@ -91,27 +135,27 @@ bun run dev               # the demo-mode banner disappears when connected
 
 After the first deployment, put the site address into Supabase *Site URL* (step 2b).
 
-## 5. Verify cross-device sync (acceptance)
+### 5. Verify cross-device sync (acceptance)
 
 1. Open the site on your computer, sign in as admin, go to `/admin/events`, rename an event.
 2. On your phone, open the site (or reload it): the new name appears.
 3. Sign out and in again on both devices: data persists.
 
-## 6. Publishing updates
+### 6. Publishing updates
 
 Commit and push to `main` → Netlify/Vercel rebuild and publish automatically
 (1–2 minutes). Pull requests get preview URLs.
 Database changes: add a **new** file in `supabase/migrations/` (never edit an
 applied one) and run it in the SQL editor or with `supabase db push`.
 
-## 7. Errors and logs
+### 7. Errors and logs
 
 * **Website build:** Netlify → *Deploys* → open a deploy → log. Vercel → *Deployments* → *Build Logs*.
 * **In the browser:** open developer tools → Console / Network.
 * **Database & API:** Supabase → *Logs & Analytics* (API, Postgres, Auth, Storage).
 * **Security/performance:** Supabase → *Advisors*.
 
-## 8. Rolling back
+### 8. Rolling back
 
 * **Website:** Netlify → *Deploys* → pick an earlier deploy → **Publish deploy**.
   Vercel → *Deployments* → earlier deployment → **Promote to Production** (Instant Rollback).

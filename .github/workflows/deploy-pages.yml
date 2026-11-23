@@ -1,8 +1,8 @@
 # Builds the site and publishes it to GitHub Pages on every push to main.
 # Settings → Pages → Source must be "GitHub Actions".
-# The Supabase URL and anon key are public by design (RLS protects the data);
-# they are set in the repository's Actions *variables* (not secrets):
-#   PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY
+# The hosted database is Neon. Its Auth and Data API URLs are public by design:
+# all access control is enforced in Postgres (GRANTs + Row Level Security).
+# Override them with repository Actions variables of the same name if needed.
 name: Deploy to GitHub Pages
 
 on:
@@ -25,13 +25,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
-      - run: bun install --production
+      - run: bun install
+      - name: Type-check
+        run: bunx tsc --noEmit
+        continue-on-error: true
       - run: bun test tests/unit
       - run: bun run build
         env:
           PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
-          PUBLIC_SUPABASE_URL: ${{ vars.PUBLIC_SUPABASE_URL }}
-          PUBLIC_SUPABASE_ANON_KEY: ${{ vars.PUBLIC_SUPABASE_ANON_KEY }}
+          PUBLIC_NEON_AUTH_URL: ${{ vars.PUBLIC_NEON_AUTH_URL || 'https://ep-silent-mode-bhh6vhss.neonauth.c-10.eu-central-1.aws.neon.tech/neondb/auth' }}
+          PUBLIC_NEON_DATA_API_URL: ${{ vars.PUBLIC_NEON_DATA_API_URL || 'https://ep-silent-mode-bhh6vhss.apirest.c-10.eu-central-1.aws.neon.tech/neondb/rest/v1' }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

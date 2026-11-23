@@ -1,5 +1,12 @@
 # Architecture
 
+> **Update (23 Nov 2026):** production now runs on **Neon** instead of
+> Supabase — Neon Auth replaces Supabase Auth, the Neon Data API (same
+> PostgREST interface) replaces Supabase's REST API, and there is no file
+> storage yet. The client adapter is `src/data/db/neon.ts`, chosen in
+> `src/data/client.ts`; the SQL lives in `neon/`. Everything below that says
+> “Supabase” applies equally to Neon unless it mentions Storage.
+
 ## Overview
 
 ```

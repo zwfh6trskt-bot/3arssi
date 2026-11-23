@@ -1,11 +1,13 @@
 // Neon adapter: Neon Auth (managed Better Auth, REST) for accounts and the
 // Neon Data API (PostgREST-compatible, /rest/v1) for data. Plain fetch, no SDK.
 //
-// Sessions: Neon Auth keeps the session in an HTTP-only cookie on its own
-// domain. Browsers that allow that cookie (Chrome, Firefox, Android) use it
-// directly. As a fallback the session token returned at sign-in is also sent
-// as a Bearer token. Data requests use a short-lived JWT (≈15 min) obtained
-// from /token and refreshed automatically.
+// Sessions: Neon Auth keeps the session in an HTTP-only, Partitioned
+// (CHIPS) cookie on its own domain, so requests to it use
+// credentials: "include". (Its /token endpoint does not accept the session
+// token as a Bearer header — verified on 2026-11-23.) Data requests use a
+// short-lived JWT (~15 min) from /token, refreshed automatically. Visitors
+// without an account use an anonymous JWT from /token/anonymous, because the
+// Data API rejects requests without any token.
 import { BASE } from "../../lib/base";
 import type { Auth, AuthUser, Db, Filter, SelectOptions } from "./types";
 import { DbError } from "./types";
@@ -118,11 +120,9 @@ export class NeonAuth implements Auth {
     return () => { this.listeners.delete(cb); };
   }
 
-  /** Asks Neon Auth for a fresh JWT: cookie first, then the Bearer session token. */
+  /** Asks Neon Auth for a fresh JWT using the session cookie. */
   private async fetchJwt(): Promise<string | null> {
-    const attempts: (Record<string, string> | undefined)[] = [undefined];
-    if (this.stored?.sessionToken) attempts.push({ Authorization: `Bearer ${this.stored.sessionToken}` });
-    for (const headers of attempts) {
+    for (const headers of [undefined] as (Record<string, string> | undefined)[]) {
       for (const path of ["/token", "/get-session"]) {
         try {
           const res = await fetch(`${this.authUrl}${path}`, { credentials: "include", headers });
@@ -153,7 +153,7 @@ export class NeonAuth implements Auth {
   async anonymousToken(): Promise<string | null> {
     if (this.anonJwt && jwtExp(this.anonJwt) - 30 > Date.now() / 1000) return this.anonJwt;
     try {
-      const res = await fetch(`${this.authUrl}/token/anonymous`);
+      const res = await fetch(`${this.authUrl}/token/anonymous`, { credentials: "include" });
       if (!res.ok) return null;
       const data = await readJson(res);
       this.anonJwt = data.token ?? res.headers.get("set-auth-jwt") ?? null;
@@ -184,12 +184,14 @@ export class NeonDb implements Db {
       ...init,
       headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}), ...init.headers },
     });
-    const userToken = await this.auth.accessToken();
-    let res = await send(userToken);
-    if (!userToken && res.status === 401) {
-      // Visitors: the Data API may require an anonymous JWT.
-      const anon = await this.auth.anonymousToken();
-      if (anon) res = await send(anon);
+    // Signed-in users send their JWT; visitors an anonymous one (read-only by RLS/GRANTs).
+    const token = (await this.auth.accessToken()) ?? (await this.auth.anonymousToken());
+    let res = await send(token);
+    if (res.status === 403 && token && (await res.clone().text()).includes("not signed in")) {
+      // Seen once on a cold Data API: the very first signed-in request ran without
+      // the user's identity. A single retry succeeds.
+      await new Promise((r) => setTimeout(r, 400));
+      res = await send(token);
     }
     if (!res.ok) {
       const data = await readJson(res);

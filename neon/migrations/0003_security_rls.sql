@@ -131,7 +131,8 @@ end $$;
 -- ---------- Personal planning: members only ------------------------------
 
 alter table public.plans enable row level security;
-create policy plans_read on public.plans for select using (public.is_plan_member(id));
+-- owner_id check: INSERT … RETURNING is evaluated before the trigger adds the owner as member
+create policy plans_read on public.plans for select using (owner_id = auth.uid() or public.is_plan_member(id));
 create policy plans_ins  on public.plans for insert with check (owner_id = auth.uid());
 create policy plans_upd  on public.plans for update using (owner_id = auth.uid()) with check (owner_id = auth.uid());
 create policy plans_del  on public.plans for delete using (owner_id = auth.uid());
