@@ -114,14 +114,24 @@ begin
   delete from public.wilayas        where is_demo;
 end $$;
 
+-- Emails pre-authorised as staff: the account gets this role when its
+-- profile is first created. Managed with SQL only (no API access).
+create table public.staff_invites (
+  email      text primary key check (email = lower(email)),
+  role       text not null check (role in ('editor','admin')),
+  created_at timestamptz not null default now()
+);
+alter table public.staff_invites enable row level security;
+
 -- Creates the signed-in user's profile on first use and returns it.
 create or replace function public.ensure_profile()
 returns public.profiles language plpgsql security definer set search_path = public as $$
 declare v_uid uuid := auth.uid(); r public.profiles;
 begin
   if v_uid is null then raise exception 'not signed in' using errcode = '42501'; end if;
-  insert into public.profiles (id, display_name)
-    select u.id, coalesce(nullif(trim(u.name), ''), split_part(u.email, '@', 1))
+  insert into public.profiles (id, display_name, role)
+    select u.id, coalesce(nullif(trim(u.name), ''), split_part(u.email, '@', 1)),
+           coalesce((select i.role from public.staff_invites i where i.email = lower(u.email)), 'user')
     from neon_auth."user" u where u.id = v_uid
   on conflict (id) do nothing;
   select * into r from public.profiles where id = v_uid;
@@ -182,3 +192,4 @@ grant execute on function public.set_user_role(uuid, text), public.admin_list_us
                           public.current_role_name() to authenticated;
 revoke execute on function public.set_user_role(uuid, text), public.admin_list_users(),
                            public.delete_demo_content(), public.ensure_profile() from anonymous, public;
+revoke all on public.staff_invites from anonymous, authenticated;

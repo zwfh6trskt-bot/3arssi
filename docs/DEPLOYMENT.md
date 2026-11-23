@@ -31,6 +31,11 @@ update public.profiles set role = 'admin'
 where id = (select id from neon_auth."user" where email = 'you@example.com');
 ```
 The person must have signed in once on the site first (that creates the profile).
+For someone who has no account yet, pre-authorise the email instead; the role
+is applied when they first sign in:
+```sql
+insert into public.staff_invites(email, role) values ('name@example.com', 'admin');
+```
 
 **Apply the schema to a new Neon project:** run the three files in
 `neon/migrations/` then `neon/seed/01_reference.sql` and `02_starter.sql`
